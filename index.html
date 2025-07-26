@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Doğa's Game Park</title>
+<style>
+body {
+    babackground: linear-gradient(135deg, #fdf2e9 0%, #f5e6fa 25%, #d0f1f7 50%, #f2f0fc 75%, #fdeefb 100%);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 40px;
+}
+h1 {
+    color: #ff7eb9;
+}
+.game-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #654ea3;
+    margin-top: 20px;
+}
+.game-link img {
+    display: none; /* resim kullanılmadığından gizlendi */
+}
+
+/* Tetris ikonunu CSS ile oluşturuyoruz. Pastel tonlarda bloklar kullanılıyor. */
+.tetris-icon {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(2, 50px);
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+.tetris-icon .block {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+.tetris-icon .block1 { background-color: #ffb3c1; }
+.tetris-icon .block2 { background-color: #ffd97d; }
+.tetris-icon .block3 { background-color: #a5d8ff; }
+.tetris-icon .block4 { background-color: #cda5f5; }
+.tetris-icon .block5 { background-color: #b5ead7; }
+</style>
+</head>
+<body>
+<h1>Doğa's Game Park</h1>
+<p>Oyunlar:</p>
+<a class="game-link" href="tetris_game/index.html">
+    <!-- CSS ile oluşturulan Tetris ikonunu kullanıyoruz -->
+    <div class="tetris-icon">
+        <div class="block block1"></div>
+        <div class="block block2"></div>
+        <div class="block block3"></div>
+        <div class="block block4"></div>
+        <div class="block block5"></div>
+        <div class="block block1"></div>
+    </div>
+    Tetris
+</a>
+</body>
+</html>
