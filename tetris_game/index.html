@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renkli Tetris Oyunu</title>
+    <!-- Bağlı stil dosyası oyunun görünümünü kontrol eder -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Oyunun başlığı ve talimatları -->
+    <header>
+        <h1>Renkli Tetris Oyunu</h1>
+        <p>
+            Parçaları hareket ettirmek için ok tuşlarını kullanın veya aşağıdaki kontrol
+            butonlarına tıklayın. Satırları tamamlayarak seviyeleri atlayın ve
+            seviye atladığınızda renkli konfeti yağmurunu izleyin! Arka planda
+            çalan müzik listesini dilediğiniz gibi değiştirebilirsiniz.
+        </p>
+    </header>
+
+    <!-- Oyun alanı ve kenar çubuğu -->
+    <main>
+        <!-- Tetris oyun tahtasının çizileceği canvas -->
+        <canvas id="gameCanvas" width="300" height="600"></canvas>
+
+        <!-- Bilgi ve kontrol paneli -->
+        <aside>
+            <div class="info-panel">
+                <h2>Skor</h2>
+                <p>Satırlar: <span id="lines">0</span></p>
+                <p>Seviye: <span id="level">1</span></p>
+                <p>Puan: <span id="score">0</span></p>
+            </div>
+
+            <!-- Hız ve zorluk ayarları -->
+            <div class="settings-panel">
+                <h2>Ayarlar</h2>
+                <label for="speedRange">Hız:</label>
+                <input type="range" id="speedRange" min="100" max="1000" step="50" value="500">
+                <span id="speedValue">500 ms</span>
+                <br>
+                <label for="difficultySelect">Zorluk:</label>
+                <select id="difficultySelect">
+                    <option value="easy">Kolay</option>
+                    <option value="normal" selected>Normal</option>
+                    <option value="hard">Zor</option>
+                </select>
+            </div>
+
+            <!-- Müzik çalar ve liste kontrolü -->
+            <div class="music-panel">
+                <h2>Müzik Listesi</h2>
+                <select id="musicSelect"></select>
+                <div class="music-controls">
+                    <button id="playBtn">▶︎ Oynat</button>
+                    <button id="pauseBtn">❚❚ Duraklat</button>
+                    <button id="nextBtn">↥ Sonraki</button>
+                </div>
+                <label for="fileInput" class="upload-label">Müzik Yükle</label>
+                <input type="file" id="fileInput" accept="audio/*" multiple hidden>
+            </div>
+
+            <!-- Ekran ücründe kontrol butonları -->
+            <div class="controls-panel">
+                <h2>Kontroller</h2>
+                <div class="control-buttons">
+                    <button id="leftBtn">←</button>
+                    <button id="rotateBtn">⟳</button>
+                    <button id="rightBtn">→</button>
+                    <button id="downBtn">↓</button>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Ses öğesi müzik çalmak için kullanılır -->
+    <audio id="audioPlayer" preload="auto"></audio>
+
+    <!-- Konfeti tuvali seviyeler arasında animasyon için -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Oyun mantığı ve animasyonlar için JavaScript dosyası -->
+    <script src="script.js"></script>
+</body>
+</html>
