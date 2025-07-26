@@ -1,0 +1,150 @@
+/* Genel görünüm ayarları */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    /* Pastel tonlarda yumuşak bir degrade arka plan kullanıyoruz. */
+    /* Böylece ağır bir resim dosyası kullanmaya gerek kalmaz ve site hızlı açılır. */
+    background: linear-gradient(135deg, #fdeff9 0%, #e1bee7 50%, #d1c4e9 100%);
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+}
+
+header h1 {
+    margin-top: 0;
+    color: #e6739f; /* pembe tonunda başlık */
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+canvas#gameCanvas {
+    background: rgba(255, 255, 255, 0.9);
+    border: 4px solid #e6b3cc;
+    border-radius: 8px;
+}
+
+aside {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+aside > div {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+aside h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #cd5c8c;
+}
+
+/* Skor ve ayarlar panelindeki metinler */
+aside p {
+    margin: 0.4rem 0;
+    font-size: 1rem;
+}
+
+/* Slider ve seçiciler */
+.settings-panel label {
+    display: block;
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+.settings-panel input[type="range"] {
+    width: 100%;
+}
+
+.settings-panel select {
+    width: 100%;
+    padding: 0.3rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Müzik paneli */
+.music-panel select {
+    width: 100%;
+    padding: 0.4rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-bottom: 0.5rem;
+}
+
+.music-controls button {
+    margin-right: 0.3rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 4px;
+    background: #e6739f;
+    color: white;
+    cursor: pointer;
+}
+
+.music-controls button:hover {
+    background: #d15f86;
+}
+
+.upload-label {
+    display: inline-block;
+    padding: 0.4rem 0.6rem;
+    background: #e6b3cc;
+    color: #333;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* Kontrol butonları */
+.controls-panel .control-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+    justify-items: center;
+}
+
+.controls-panel button {
+    font-size: 1.5rem;
+    padding: 0.4rem;
+    border: none;
+    border-radius: 4px;
+    background: #f7c4d8;
+    color: #333;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+}
+
+.controls-panel button:hover {
+    background: #e6a5c4;
+}
+
+/* Konfeti tuvali tüm sayfayı kaplar fakat oyun sonrasında görünür olur */
+#confettiCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* tıklamaları engellememesi için */
+    z-index: 100;
+    display: none; /* başlangıçta gizli */
+}
